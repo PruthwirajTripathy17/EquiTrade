@@ -11,7 +11,7 @@ const SellActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0);
 
   const handleSellClick = () => {
-    axios.post("http://localhost:3002/newOrder", {
+    axios.post("https://equitrade-7eqx.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

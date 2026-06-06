@@ -33,7 +33,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        "https://equitrade-7eqx.onrender.com/login",
         {
           ...inputValue,
         },
