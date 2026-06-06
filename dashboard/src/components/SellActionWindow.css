@@ -1,0 +1,10 @@
+@import "./BuyActionWindow.css";
+
+.btn-red {
+  background: #f6465d;
+  color: white;
+}
+
+.btn-red:hover {
+  background: #ff6b7c;
+}
