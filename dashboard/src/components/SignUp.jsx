@@ -3,6 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "./indexs.css";
+import {
+  API_URL,
+  AUTH_TOKEN_KEY,
+  AUTH_USER_KEY,
+  FALLBACK_AUTH_TOKEN,
+} from "../config/api";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -33,14 +39,16 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://equitrade-7eqx.onrender.com/signup",
+        `${API_URL}/signup`,
         {
           ...inputValue,
         },
         { withCredentials: true }
       );
-      const { success, message } = data;
+      const { success, message, token } = data;
       if (success) {
+        localStorage.setItem(AUTH_TOKEN_KEY, token || FALLBACK_AUTH_TOKEN);
+        localStorage.setItem(AUTH_USER_KEY, username);
         handleSuccess(message);
         setTimeout(() => {
           navigate("/");
