@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import { DASHBOARD_URL } from "../config";
 function Navbar() {
   return (
     <nav
@@ -31,10 +32,15 @@ function Navbar() {
           <form className="d-flex ms-auto" role="search">
             <ul className="navbar-nav  mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" to="/signup">
+                <a className="nav-link active" href={`${DASHBOARD_URL}/signup`}>
                   Signup
-                </Link>
+                </a>
               </li>
+              {/* <li className="nav-item">
+                <a className="nav-link active" href={DASHBOARD_URL}>
+                  Dashboard
+                </a>
+              </li> */}
 
               <li className="nav-item">
                 <Link className="nav-link active" to="/about">

@@ -991,6 +991,19 @@ hr {
     overflow: visible;
   }
 
+  /* Prevent profile/logout area from disappearing on small screens */
+  .profile {
+    display: flex;
+    flex-shrink: 0;
+    margin-left: 0;
+  }
+
+  .profile-dropdown {
+    display: block;
+    z-index: 9999;
+  }
+
+
   .topbar-container,
   .dashboard-container {
     flex-direction: column;

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
+import { API_URL } from "../config/api";
 import { Link } from "react-router-dom";
 import GeneralContext from "./GeneralContext";
 import "./SellActionWindow.css";
@@ -11,7 +12,7 @@ const SellActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0);
 
   const handleSellClick = () => {
-    axios.post("https://equitrade-7eqx.onrender.com/newOrder", {
+    axios.post(`${API_URL}/newOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

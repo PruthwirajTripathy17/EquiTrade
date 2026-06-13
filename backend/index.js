@@ -18,7 +18,13 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "http://localhost:5174",
+  "http://localhost:5175",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:5174",
+  "http://127.0.0.1:5175",
   "https://equitrade-dashboard-47xy.onrender.com",
+  "https://equitrade-7eqx.onrender.com",
 ];
 
 app.use(
@@ -225,7 +231,7 @@ app.get("/allOrders", async (req, res) => {
   res.json(allOrders);
 });
 app.listen(PORT, () => {
-  console.log("App started!");
+  console.log(`App started on port ${PORT}!`);
   mongoose.connect(uri);
   console.log("Connected to MongoDB");
 });

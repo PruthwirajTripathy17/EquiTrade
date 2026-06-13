@@ -13,10 +13,10 @@ describe("Hero Component", () => {
         expect(heroImage).toBeInTheDocument();
         expect(heroImage).toHaveAttribute("src", "/media/Images/homeHero.png");
     });
-    test("renders signup button", () => {
+    test("renders signup link", () => {
         render(<Hero />);
-        const signupButton = screen.getByRole("button",{name: /signup now/i});
-        expect(signupButton).toBeInTheDocument();
-        expect(signupButton).toHaveClass("btn-primary");
+        const signupLink = screen.getByRole("link",{name: /signup now/i});
+        expect(signupLink).toBeInTheDocument();
+        expect(signupLink).toHaveClass("btn-primary");
     });
 });

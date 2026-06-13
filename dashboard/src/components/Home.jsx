@@ -29,6 +29,16 @@ const Home = () => {
 
   useEffect(() => {
     const verifyCookie = async () => {
+      const params = new URLSearchParams(window.location.search);
+      const paramToken = params.get("token");
+      const paramUser = params.get("user");
+
+      if (paramToken && paramUser) {
+        localStorage.setItem(AUTH_TOKEN_KEY, paramToken);
+        localStorage.setItem(AUTH_USER_KEY, paramUser);
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+
       const token = localStorage.getItem(AUTH_TOKEN_KEY);
       const savedUser = localStorage.getItem(AUTH_USER_KEY);
 
@@ -80,7 +90,11 @@ const Home = () => {
   const Logout = () => {
     localStorage.removeItem(AUTH_TOKEN_KEY);
     localStorage.removeItem(AUTH_USER_KEY);
+
+    // backend sets cookie name: "token"
     removeCookie("token", { path: "/" });
+    removeCookie("token", { path: "" });
+
     setIsAuthenticated(false);
     navigate("/login", { replace: true });
   };

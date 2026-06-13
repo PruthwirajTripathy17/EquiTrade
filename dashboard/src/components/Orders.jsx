@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../config/api";
 
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("https://equitrade-7eqx.onrender.com/allOrders")
+    axios.get(`${API_URL}/allOrders`)
       .then((res) => {
         setAllOrders(res.data);
       })
