@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from 'react-router-dom';
-import { DASHBOARD_URL } from "../config";
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav
@@ -30,33 +30,31 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <form className="d-flex ms-auto" role="search">
-            <ul className="navbar-nav  mb-lg-0">
+            <ul className="navbar-nav mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active"href={`${DASHBOARD_URL}/signup`}>
+                <Link className="nav-link active" to="/signup">
                   Signup
-                </a>
-              </li> 
-              {/* <li className="nav-item">
-                <a className="nav-link active" href={DASHBOARD_URL}>
-                  Dashboard
-                </a>
-              </li> */}
+                </Link>
+              </li>
 
               <li className="nav-item">
                 <Link className="nav-link active" to="/about">
                   About
                 </Link>
               </li>
+
               <li className="nav-item">
                 <Link className="nav-link active" to="/product">
                   Product
                 </Link>
               </li>
+
               <li className="nav-item">
                 <Link className="nav-link active" to="/pricing">
                   Pricing
                 </Link>
               </li>
+
               <li className="nav-item">
                 <Link className="nav-link active" to="/support">
                   Support
@@ -64,7 +62,6 @@ function Navbar() {
               </li>
             </ul>
           </form>
-          
         </div>
       </div>
     </nav>
