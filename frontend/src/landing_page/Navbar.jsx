@@ -32,10 +32,10 @@ function Navbar() {
           <form className="d-flex ms-auto" role="search">
             <ul className="navbar-nav  mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" href={`${DASHBOARD_URL}/signup`}>
+                <a className="nav-link active"href={`${DASHBOARD_URL}/signup`}>
                   Signup
                 </a>
-              </li>
+              </li> 
               {/* <li className="nav-item">
                 <a className="nav-link active" href={DASHBOARD_URL}>
                   Dashboard
@@ -64,6 +64,7 @@ function Navbar() {
               </li>
             </ul>
           </form>
+          
         </div>
       </div>
     </nav>
